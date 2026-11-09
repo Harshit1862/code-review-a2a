@@ -13,8 +13,8 @@ Backend only: FastAPI + LangGraph + A2A (`a2a-sdk` 1.3.0) + MongoDB + Groq.
                           │  A2A (JSON-RPC), in parallel
           ┌───────────────┼────────────────┐
           ▼               ▼                ▼
-   Code reviewer    Best practice     Security reviewer
-   :10001 (ast+LLM) :10002 (ruff+LLM) :10003 (bandit+LLM)
+   Code reviewer  Best practice  Security reviewer
+   :10001 (LLM)   :10002 (LLM)   :10003 (LLM)
 ```
 
 ## Project structure
@@ -180,8 +180,8 @@ Each report still shows a one-line breakdown, e.g. `6.5/10, LLM's own judgment (
 
 ## Offline mode
 
-Set `LLM_PROVIDER=fake` in `.env` to run everything without a Groq key. ruff, bandit, the database,
-A2A and scoring all run for real; only the LLM is replaced by keyword rules, so chat replies are basic.
+Set `LLM_PROVIDER=fake` in `.env` to run everything without a Groq key. The database, A2A and scoring
+all run for real; only the LLM is replaced by keyword rules, so chat replies and reviews are basic.
 
 ## Notes
 
